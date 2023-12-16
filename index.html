@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNN News</title>
+    <!-- For more information about the News API, visit: -->
+    <!-- https://newsapi.org/docs/get-started#top-headlines -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"/>
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/brands.css"/>
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/solid.css"/>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- For debugging --><!--Adds borders for visualization-->
+    <!-- <link rel="stylesheet" href="../../Debug/Tools/CSS/bootstrap-borders-styles.css"/> -->
+
+</head>
+<body>
+
+    <div class="container-fluid no-gutters">
+        <header>
+            <div class="row top-banner d-none d-md-flex">
+                <div class="col-4" id="thisIsDnn">
+                    <h1>*James Earl Jones Voice*</h1><br>
+                    <h2>This is <span class="dnn-logo">DNN</span>... lol</h2>
+                </div>
+                
+                <div class="col banner-pic p-0" id="banner-mid">
+                    
+                </div>
+                <div class="col-3 banner-pic p-0">
+                    <video class="img-fluid" autoplay muted playsinline loop src="./img/vecteezy_3d-world-news-background-loop_4216831.mov">The world</video>
+                </div>
+            </div>
+        </header>
+    </div>
+    
+    
+    <nav class="navbar navbar-expand-md navbar-light sticky-top bg-dark">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand logo" role="logo">
+                <span class = "dnn-logo">DNN</span>
+            </a>
+            <!--for debug (Displays BS viewport)-->
+            <!-- <div class="col-1" style="color:white; background-color: black;">
+                <span class="d-sm-none">XS View</span>
+                <span class="d-none d-sm-inline d-md-none">SM View</span>
+                <span class="d-none d-md-inline d-lg-none">MD View</span>
+                <span class="d-none d-lg-inline d-xl-none">LG View</span>
+                <span class="d-none d-xl-inline">XL View</span>
+            </div> -->
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Wrapped all of the Link names in a ...<span data-bs-toggle... to work around a glitch where the navbar would remain open after being
+                clicked. Adding those attributes to the anchor or list item would break the navigation link. 
+                (<li><a><span>text</span></a></li>) -->
+                <div class="collapse navbar-collapse justify-content-center" id="mainMenu">
+                    <ul class="navbar-nav px-4">
+                        <li class="navbar-item"><a href="#" aria-current="true" class="navbar-link active"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Home</span></a></li>
+                        <li class="navbar-item"><a href="#topStories" class="navbar-link px-4"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Top Stories</span></a></li>
+                        <li class="navbar-item"><a href="#worldNews" class="navbar-link px-4"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">World News</span></a></li>
+                        <li class="navbar-item"><a href="#about" class="navbar-link px-4"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">About</span></a></li>
+                        <li class="navbar-item"><a href="#searchBox" class="navbar-link px-4"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-magnifying-glass"></i> Search</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+        <div class="container-fluid justify-content-center align-items-center text-center no-gutters">
+            <!--Main Content Row-->
+            <main class="row justify-content-center text-center align-items-center">
+                <div class="col-md-8 col-lg-6 mx-auto">
+                    
+                <div class="row justify-content-center text-center align-items-center">
+                    <div class="col">
+                        <h2 id="topStories">Top Stories</h2>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center text-center align-items-center">
+                    <!-- container for the Carousel -->
+                    <div class="col" id="newsCarouselHolder">
+                        <!-- News Carousel -->
+                        <div class="carousel slide" id="newsCarousel" data-bs-ride="carousel">
+                            
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators" id="cList">
+                            </ol>
+                            
+                            <!-- Inner content -->
+                            <div class="carousel-inner container-like-ratio" id="cInner">
+                                <!-- <div class="carousel-item active" data-bs-interval="3000">
+                                    <a href=""></a>
+                                    <img src="./img/test-image.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Title</h5>
+                                    </div>
+                                </div> -->
+                                
+                            </div>
+                            
+                            <a href="#newsCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a href="#newsCarousel" class="carousel-control-next" role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </a>
+                        </div>
+                    </div> <!--End of Carousel-->
+                </div><!--End of Carousel column-->
+                <hr>
+            </div>
+        </main>
+
+        <div class="row justify-content-center text-center align-items-center">
+            <div class="col-md-8 col-lg-6 mx-auto d-none" id="searchHeader">
+                <h3>Search Results</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center text-center align-items-center">
+            <div class="col-md-8 col-lg-6 mx-auto" id="searchResults">
+                <!-- Search results populate here -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-lg-6 mx-auto" id="searchPagify">
+                <!-- page numbers -->
+            </div>
+        </div>
+        <hr>
+        <section id="worldNews">
+            <div class="row justify-content-center text-center align-items-center">
+                <div class="col" id="storyHeader">
+                    <h3 id="newsTitle">World News</h3>
+                </div>
+            </div>
+    
+            <div class="row justify-content-center text-center align-items-center">
+                <div class="col-md-12 col-xl-10 mx-auto" id="storyList">
+                    <!-- World news articles populate here -->
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col" id="worldPagify">
+                    <!-- page numbers -->
+                </div>
+            </div>
+        </section>
+        
+
+    </div><!--End of container-fluid-->
+    
+    <div class="container-fluid no-gutters footer-container">
+        <hr>
+        <div class="row justify-content-center text-center align-items-center">
+            <div class="col">
+                <!-- Search News rows -->
+                <div class="row justify-content-center text-center align-items-center">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Search News</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input id="searchBox" class="form-control" type="text"placeholder="This is DNN" >
+                            </div>
+                            <div class="col">
+                                <button id="searchBtn" class="btn form-control" type="button"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row" id="searchOptRow">
+                                    <!-- <div class="col">
+                                        <h4 class="filterHeading" data-country="us" id="us">United States</h4>
+                                        <ul class="filterSub">
+                                            <li>1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--End of search news rows-->
+                <hr>
+                <footer>
+                    <div class="row" id="about">
+                        <div class="col">
+                            <span class="dnn-logo">DNN</span>
+                        </div>
+                        <div class="col">
+                            Follow DNN
+                        </div>
+                        <div class="col">
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <br>
+                    This site uses the <a href="https://newsapi.org/docs/get-started">News API</a>
+                    <br>
+                    3D World News Background Loop Stock Videos by <a href="https://www.vecteezy.com/video/4216831-3d-world-news-background-loop">Vecteezy</a>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- JavaScript -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./js/main.js" type="module"></script>
+    <!-- <script src="./js/newsAPI.js" type="module"></script> -->
+
+</body>
+</html>

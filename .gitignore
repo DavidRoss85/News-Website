@@ -1,0 +1,7 @@
+.env
+node_modules
+.parcel-cache
+dist
+worldLoop.mov
+vecteezy_3d-world-news-background-loop_4216831.mov
+.firebase

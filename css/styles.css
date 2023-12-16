@@ -1,0 +1,130 @@
+/* Color Palette
+#ec912e	(236,145,46)
+#3042a1	(48,66,161)
+#227594	(34,117,148)
+#d4d1cb	(212,209,203)
+#f5eee8	(245,238,232)
+ */
+
+ :root{
+    /* --theme-color-1: #ec912e;
+    --theme-color-2: #3042a1; 
+    --theme-color-3: #227594;	
+    --theme-color-4: #d4d1cb;
+    --theme-color-5: #f5eee8;	 */
+
+    --theme-color-1:rgb(0, 0, 0);
+    --theme-color-2: white;
+    --theme-color-3: #850d0d;	
+    --theme-color-4: #1f1f1f;
+    --theme-color-5: #e2e2e2;	
+
+ }
+
+ body{
+    background: var(--theme-color-2);
+    color: var(--theme-color-1);
+ }
+footer, .footer-container{
+    color: white;
+    background-color: black;
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+
+}
+.dnn-logo{
+    background-color: rgb(156, 5, 5);
+    color: white;
+    text-shadow: .05em .025em red,.1em .05em  white;
+    border-radius: 30%;
+    padding: 10px;
+}
+.banner-pic img{
+    padding: 0px;
+    object-fit: cover;
+}
+.top-banner{
+    height: 12.1vw;
+}
+.pageNumber{
+    cursor:pointer;
+    &:hover {
+        color: red;
+        transform: scale(2) .5s;
+    }
+}
+.filterHeading{
+    cursor: pointer;
+    text-align: left;
+}
+.filterSub{
+    cursor: pointer;
+    text-align: left;
+    &ul{
+        list-style: none;
+    }
+}
+
+#banner-mid{
+    background-image: url(../img/test-image.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#thisIsDnn {
+    background: black;
+    color: white;
+    & h1{
+        font-size: 2vw;
+    }
+    & h2 {
+        font-size:1.5vw;
+    }
+}
+video{
+    padding: 0px;
+    margin:0px;
+    border:0px;
+}
+ .navbar{
+    margin-top: 0px;
+    border-top:0px;
+    background: var(--theme-color-4);
+    & a {
+        color:white;
+        font-weight: bold;
+        text-decoration: none;
+        & :hover{
+            color: rgb(156, 5, 5);
+        }
+    }
+    
+}
+
+#searchBtn{
+    background-color:rgb(156, 5, 5);
+    color: white;
+}
+#storyList, #searchResults{
+    & a{
+        text-decoration: none;
+    }
+
+    & .card-header, .card-text{
+        color:black;
+    }
+}
+.container-like-ratio img {
+    width: 100%;
+    height:40vh;
+    object-fit: cover;
+}
+
+.carousel-caption{
+    background:linear-gradient(to bottom,rgba(0,0,0,.1),rgba(0,0,0,.6),rgba(0,0,0,1),rgba(0,0,0,.6),rgba(0,0,0,.1));
+    color: var(--theme-color-2);
+    text-shadow: 1px 1px 20px rgb(21, 21, 21);
+    font-weight: medium;
+
+}
