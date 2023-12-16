@@ -330,6 +330,7 @@ async function showMeSomeNews() {
     breakingNews = await getBreakingNews();
     worldNews = await getNews("?q=World News");
 
+    console.log(worldNews);
     generateCarousel(breakingNews.articles, 5);
     populateWorldNews(worldNews.articles, 1);
     populateSearchOptions(pageSearchOptions);
