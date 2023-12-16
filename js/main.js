@@ -123,7 +123,7 @@ function populateSearchResults(newsArticles = [], pageNumber = 0) {
         if (i > (pageNumber * 10) + 10) break;
     }
     clearPageNumbers("searchPagify");
-    for (i = 0; i < newsArticles.length; i += 10) {
+    for (let i = 0; i < newsArticles.length; i += 10) {
         let pageNumber = i / 10;
         const pageEl = document.createElement("span")
         const spacerEl = document.createElement("span");
@@ -220,7 +220,7 @@ function populateWorldNews(newsArticles = [], pageNumber = 0) {
         if (i > (pageNumber * 10) + 10) break;
     }
     clearPageNumbers("worldPagify");
-    for (i = 0; i < newsArticles.length; i += 10) {
+    for (let i = 0; i < newsArticles.length; i += 10) {
         let pageNumber = i / 10;
         const pageEl = document.createElement("span")
         const spacerEl = document.createElement("span");
@@ -335,7 +335,7 @@ async function showMeSomeNews() {
     worldNews = await getNewsDemo("?q=World News");
 
 
-    console.log(worldNews);
+    // console.log(worldNews);
     generateCarousel(breakingNews.articles, 5);
     populateWorldNews(worldNews.articles, 1);
     populateSearchOptions(pageSearchOptions);
