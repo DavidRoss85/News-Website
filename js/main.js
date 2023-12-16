@@ -1,4 +1,4 @@
-import { getBreakingNews, getNews, testArticleArray,pageSearchOptions} from "./newsAPI";
+import { getBreakingNewsDemo, getNewsDemo,getBreakingNews, getNews, testArticleArray,pageSearchOptions} from "./newsAPI";
 
 const searchButton = document.getElementById("searchBtn");
 const searchBox = document.getElementById("searchBox");
@@ -31,7 +31,7 @@ function populateSearchOptions(searchArray) {
         searchCatHead.textContent = searchItem.headLink.title
         searchCatHead.setAttribute("class", "filterHeading");
         searchCatHead.addEventListener("click",async()=>{
-            filteredNews = await getNews(searchVariable);
+            filteredNews = await getNewsDemo(searchVariable);
             clearNewsList("searchResults");
             clearPageNumbers("searchPagify");
             document.getElementById("searchHeader").classList.add("d-none");
@@ -51,7 +51,7 @@ function populateSearchOptions(searchArray) {
             searchLi.textContent = subSearchItem.title;
             //Add event listener for each item
             searchLi.addEventListener("click",async()=>{
-                filteredNews = await getNews(searchVariable);
+                filteredNews = await getNewsDemo(searchVariable);
                 clearNewsList("searchResults");
                 clearPageNumbers("searchPagify");
                 document.getElementById("searchHeader").classList.add("d-none");
@@ -327,8 +327,13 @@ function generateCarousel(newsArticles = [], numToShow = 5, carouselId = "#newsC
 
 async function showMeSomeNews() {
 
-    breakingNews = await getBreakingNews();
-    worldNews = await getNews("?q=World News");
+    // breakingNews = await getBreakingNews();
+    // worldNews = await getNews("?q=World News");
+
+    //DEMO purposes
+    breakingNews = await getBreakingNewsDemo();
+    worldNews = await getNewsDemo("?q=World News");
+
 
     console.log(worldNews);
     generateCarousel(breakingNews.articles, 5);
@@ -340,7 +345,7 @@ async function searchNews() {
     const searchCriteria = `?q=${searchBox.value}`;
     if (!searchCriteria) return;
 
-    searchResults = await getNews(searchCriteria);
+    searchResults = await getNewsDemo(searchCriteria);
     clearNewsList("searchResults");
     populateSearchResults(searchResults.articles);
     window.location.href = "#searchHeader";

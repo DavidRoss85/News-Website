@@ -42,6 +42,14 @@ const URL_TOP_HEADLINES = "top-headlines"
 const URL_EVERYTHING = "everything"
 const URL_API_PRE = "&apiKey="
 
+//DEMO functions just for display purposes. Does not access the News API
+async function getBreakingNewsDemo(country = "us"){
+    return demoBreakingNewsArray;
+}
+async function getNewsDemo(searchCriteria = "?q=News"){
+    return demoWorldNewsArray;
+}
+
 
 async function getNews(searchCriteria = "?q=News") {
     const newsURL = `${URL_BASE}${URL_EVERYTHING}${searchCriteria}${URL_API_PRE}${apiKey}`
@@ -65,18 +73,18 @@ async function getBreakingNews(country = "us"){
     }
 }
 
-class SearchLink{
-    constructor(title = "United States",searchText = "?q=United States"){
-        this.title=title;
-        this.searchText = searchText;
-    }
-}
-class searchOption{
-    constructor(headLink = new SearchLink, subLinks =[]){
-        this.headLink=headLink;
-        this.subLinks = subLinks;
-    }
-}
+// class SearchLink{
+//     constructor(title = "United States",searchText = "?q=United States"){
+//         this.title=title;
+//         this.searchText = searchText;
+//     }
+// }
+// class searchOption{
+//     constructor(headLink = new SearchLink, subLinks =[]){
+//         this.headLink=headLink;
+//         this.subLinks = subLinks;
+//     }
+// }
 
 
 const pageSearchOptions = 
@@ -1739,4 +1747,4 @@ const demoWorldNewsArray = {
     ]
 }
 
-export {pageSearchOptions,testArticleArray, demoBreakingNewsArray,demoWorldNewsArray, getBreakingNews,getNews}; 
+export {pageSearchOptions,testArticleArray, getBreakingNews,getNews,getNewsDemo,getBreakingNewsDemo}; 
